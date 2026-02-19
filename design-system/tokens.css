@@ -1,0 +1,56 @@
+/**
+ * KodNest Premium Build System — Design Tokens
+ * Calm, Intentional, Coherent, Confident
+ * Maximum 4 colors. No gradients, no glassmorphism, no neon.
+ */
+
+:root {
+  /* ===== COLOR SYSTEM (4 colors max) ===== */
+  --kn-bg: #F7F6F3;
+  --kn-text: #111111;
+  --kn-accent: #8B0000;
+  --kn-success: #5A7A5A;   /* muted green */
+  --kn-warning: #9A7B4F;   /* muted amber */
+  
+  /* Semantic derivatives (same palette, contextual use) */
+  --kn-text-muted: rgba(17, 17, 17, 0.7);
+  --kn-border: rgba(17, 17, 17, 0.12);
+  --kn-border-focus: #8B0000;
+  
+  /* ===== TYPOGRAPHY ===== */
+  --kn-font-serif: 'Georgia', 'Cambria', 'Times New Roman', Times, serif;
+  --kn-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  --kn-heading-size-xs: 1.125rem;   /* 18px */
+  --kn-heading-size-sm: 1.5rem;     /* 24px */
+  --kn-heading-size-md: 2rem;       /* 32px */
+  --kn-heading-size-lg: 2.5rem;     /* 40px */
+  --kn-heading-size-xl: 3rem;       /* 48px */
+  
+  --kn-body-size: 1rem;             /* 16px */
+  --kn-body-size-lg: 1.125rem;      /* 18px */
+  --kn-body-line: 1.6;
+  --kn-body-line-relaxed: 1.8;
+  --kn-text-max-width: 720px;
+  
+  --kn-letter-spacing-tight: -0.02em;
+  --kn-letter-spacing-normal: 0;
+  
+  /* ===== SPACING SYSTEM ===== */
+  --kn-space-1: 8px;
+  --kn-space-2: 16px;
+  --kn-space-3: 24px;
+  --kn-space-4: 40px;
+  --kn-space-5: 64px;
+  
+  /* ===== COMPONENTS ===== */
+  --kn-radius: 6px;
+  --kn-radius-sm: 4px;
+  --kn-border-width: 1px;
+  --kn-border-width-focus: 2px;
+  
+  /* ===== INTERACTIONS ===== */
+  --kn-transition-duration: 180ms;
+  --kn-transition-timing: ease-in-out;
+  --kn-transition: var(--kn-transition-duration) var(--kn-transition-timing);
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Notification Tracker</title>
+  <link rel="stylesheet" href="design-system/index.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="kn-page">
+    <nav class="kn-app-nav">
+      <a href="#/" class="kn-app-nav-brand">Job Notification Tracker</a>
+      <button class="kn-app-nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span class="kn-app-nav-toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <div class="kn-app-nav-links" id="nav-links">
+        <a href="#/dashboard" class="kn-app-nav-link">Dashboard</a>
+        <a href="#/saved" class="kn-app-nav-link">Saved</a>
+        <a href="#/digest" class="kn-app-nav-link">Digest</a>
+        <a href="#/settings" class="kn-app-nav-link">Settings</a>
+        <a href="#/jt/proof" class="kn-app-nav-link">Proof</a>
+        <a href="#/jt/07-test" class="kn-app-nav-link">Test</a>
+        <a href="#/jt/08-ship" class="kn-app-nav-link">Ship</a>
+      </div>
+    </nav>
+
+    <main class="kn-app-main" id="app-content">
+      <!-- Rendered by router -->
+    </main>
+  </div>
+
+  <script src="data/jobs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

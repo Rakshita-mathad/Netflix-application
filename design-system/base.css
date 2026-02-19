@@ -1,0 +1,61 @@
+/**
+ * KodNest Premium Build System — Base Styles
+ * Clean reset, typography, global layout foundations
+ */
+
+@import './tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--kn-font-sans);
+  font-size: var(--kn-body-size);
+  line-height: var(--kn-body-line);
+  color: var(--kn-text);
+  background-color: var(--kn-bg);
+  min-height: 100vh;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1, h2, h3, h4 {
+  font-family: var(--kn-font-serif);
+  font-weight: 600;
+  letter-spacing: var(--kn-letter-spacing-tight);
+  margin: 0 0 var(--kn-space-2);
+  color: var(--kn-text);
+}
+
+h1 { font-size: var(--kn-heading-size-xl); }
+h2 { font-size: var(--kn-heading-size-lg); }
+h3 { font-size: var(--kn-heading-size-md); }
+h4 { font-size: var(--kn-heading-size-sm); }
+
+p {
+  margin: 0 0 var(--kn-space-2);
+  max-width: var(--kn-text-max-width);
+  line-height: var(--kn-body-line-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: var(--kn-text-muted);
+}
+
+.text-body-lg {
+  font-size: var(--kn-body-size-lg);
+}

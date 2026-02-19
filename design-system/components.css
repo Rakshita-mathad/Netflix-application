@@ -1,0 +1,138 @@
+/**
+ * KodNest Premium Build System — Components
+ * Consistent buttons, inputs, cards, badges
+ */
+
+@import './tokens.css';
+
+/* ===== BUTTONS ===== */
+
+.kn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kn-space-1);
+  padding: var(--kn-space-1) var(--kn-space-2);
+  font-family: var(--kn-font-sans);
+  font-size: var(--kn-body-size);
+  font-weight: 500;
+  border-radius: var(--kn-radius);
+  border: var(--kn-border-width) solid transparent;
+  cursor: pointer;
+  transition: background-color var(--kn-transition),
+    border-color var(--kn-transition),
+    color var(--kn-transition);
+}
+
+.kn-btn:focus-visible {
+  outline: var(--kn-border-width-focus) solid var(--kn-border-focus);
+  outline-offset: 2px;
+}
+
+/* Primary: solid deep red */
+.kn-btn-primary {
+  background-color: var(--kn-accent);
+  color: var(--kn-bg);
+  border-color: var(--kn-accent);
+}
+
+.kn-btn-primary:hover {
+  background-color: #6D0000;
+  border-color: #6D0000;
+}
+
+/* Secondary: outlined */
+.kn-btn-secondary {
+  background-color: transparent;
+  color: var(--kn-text);
+  border-color: var(--kn-border);
+}
+
+.kn-btn-secondary:hover {
+  border-color: var(--kn-text);
+  color: var(--kn-text);
+}
+
+/* ===== INPUTS ===== */
+
+.kn-input,
+.kn-textarea {
+  width: 100%;
+  padding: var(--kn-space-1) var(--kn-space-2);
+  font-family: var(--kn-font-sans);
+  font-size: var(--kn-body-size);
+  color: var(--kn-text);
+  background-color: var(--kn-bg);
+  border: var(--kn-border-width) solid var(--kn-border);
+  border-radius: var(--kn-radius);
+  transition: border-color var(--kn-transition);
+}
+
+.kn-input:focus,
+.kn-textarea:focus {
+  outline: 2px solid var(--kn-border-focus);
+  outline-offset: 2px;
+  border-color: var(--kn-border-focus);
+}
+
+.kn-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.kn-input::placeholder,
+.kn-textarea::placeholder {
+  color: var(--kn-text-muted);
+}
+
+/* ===== CARDS ===== */
+
+.kn-card {
+  background-color: var(--kn-bg);
+  border: var(--kn-border-width) solid var(--kn-border);
+  border-radius: var(--kn-radius);
+  padding: var(--kn-space-3);
+  /* No drop shadows */
+}
+
+/* ===== BADGES / STATUS ===== */
+
+.kn-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--kn-space-1) var(--kn-space-2);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--kn-radius-sm);
+  border: var(--kn-border-width) solid var(--kn-border);
+}
+
+.kn-badge-not-started {
+  color: var(--kn-text-muted);
+}
+
+.kn-badge-in-progress {
+  color: var(--kn-accent);
+  border-color: var(--kn-accent);
+}
+
+.kn-badge-shipped {
+  color: var(--kn-success);
+  border-color: var(--kn-success);
+}
+
+/* ===== CHECKBOX (Proof Footer) ===== */
+
+.kn-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--kn-space-2);
+  cursor: pointer;
+}
+
+.kn-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--kn-accent);
+  cursor: pointer;
+}

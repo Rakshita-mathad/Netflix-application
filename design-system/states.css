@@ -1,0 +1,62 @@
+/**
+ * KodNest Premium Build System — States
+ * Error and empty states: explain + fix, never blame. Provide next action.
+ */
+
+@import './tokens.css';
+
+/* ===== ERROR STATE ===== */
+
+.kn-error {
+  padding: var(--kn-space-3);
+  border: var(--kn-border-width) solid var(--kn-accent);
+  border-radius: var(--kn-radius);
+  background-color: var(--kn-bg);
+}
+
+.kn-error-title {
+  font-family: var(--kn-font-sans);
+  font-weight: 600;
+  font-size: var(--kn-body-size);
+  color: var(--kn-text);
+  margin-bottom: var(--kn-space-1);
+}
+
+.kn-error-message {
+  font-size: var(--kn-body-size);
+  color: var(--kn-text-muted);
+  margin-bottom: var(--kn-space-2);
+}
+
+.kn-error-action {
+  font-size: var(--kn-body-size);
+  color: var(--kn-text);
+  font-weight: 500;
+}
+
+/* ===== EMPTY STATE ===== */
+
+.kn-empty {
+  padding: var(--kn-space-5);
+  text-align: center;
+}
+
+.kn-empty-title {
+  font-family: var(--kn-font-serif);
+  font-size: var(--kn-heading-size-sm);
+  font-weight: 600;
+  color: var(--kn-text);
+  margin-bottom: var(--kn-space-1);
+}
+
+.kn-empty-message {
+  font-size: var(--kn-body-size);
+  color: var(--kn-text-muted);
+  max-width: var(--kn-text-max-width);
+  margin: 0 auto var(--kn-space-3);
+  line-height: var(--kn-body-line-relaxed);
+}
+
+.kn-empty-action {
+  /* Next action button or link */
+}
