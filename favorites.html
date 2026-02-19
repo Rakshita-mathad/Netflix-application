@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites - Netflix</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="dashboard-header">
+      <a href="home.html" class="logo">NETFLIX</a>
+      <div class="search-logout">
+        <a href="home.html" class="btn-profile">🏠 Home</a>
+        <a href="watchlist.html" class="btn-profile">📋 Watchlist</a>
+        <a href="profile.html" class="btn-profile">👤 Profile</a>
+        <a href="login.html" class="btn-logout" id="logoutBtn">Logout</a>
+      </div>
+    </header>
+    <main class="dashboard-content">
+      <h1 class="section-title">My Favorites</h1>
+      <div id="favoritesContainer">
+        <div class="loading" id="loadingState" style="display: none;">
+          <div class="loading-spinner"></div>
+          <p>Loading favorites...</p>
+        </div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <p>You haven't added any favorites yet.</p>
+          <p style="margin-top: 1rem;"><a href="home.html" style="color: var(--red-accent);">Browse movies</a> to add favorites!</p>
+        </div>
+        <div id="favoritesGrid" style="display: none;"></div>
+      </div>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/movie-details.js"></script>
+  <script src="js/favorites.js"></script>
+</body>
+</html>
