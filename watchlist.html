@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watchlist - Netflix</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="dashboard">
+    <header class="dashboard-header">
+      <a href="home.html" class="logo">NETFLIX</a>
+      <div class="search-logout">
+        <a href="home.html" class="btn-profile">🏠 Home</a>
+        <a href="favorites.html" class="btn-favorites-nav">❤️ Favorites</a>
+        <a href="profile.html" class="btn-profile">👤 Profile</a>
+        <a href="login.html" class="btn-logout" id="logoutBtn">Logout</a>
+      </div>
+    </header>
+    <main class="dashboard-content" id="main-content">
+      <h1 class="section-title">My Watchlist</h1>
+      <p class="welcome-msg">Movies and series you saved to watch later.</p>
+      <div id="watchlistContainer">
+        <div class="loading" id="loadingState" style="display: none;"></div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <p>Your watchlist is empty.</p>
+          <p style="margin-top: 1rem;"><a href="home.html" class="link-cta">Browse movies</a> and add to watchlist from movie details.</p>
+        </div>
+        <div id="watchlistGrid" style="display: none;"></div>
+      </div>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/movie-details.js"></script>
+  <script src="js/watchlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Netflix</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header class="dashboard-header">
+      <a href="home.html" class="logo">NETFLIX</a>
+      <div class="search-logout">
+        <a href="home.html" class="btn-profile">🏠 Home</a>
+        <a href="favorites.html" class="btn-favorites-nav">❤️ Favorites</a>
+        <a href="login.html" class="btn-logout" id="logoutBtn">Logout</a>
+      </div>
+    </header>
+    <main class="dashboard-content">
+      <h1 class="section-title">My Profile</h1>
+      <div class="profile-container">
+        <div class="profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar">👤</div>
+            <h2 id="profileName">Loading...</h2>
+            <p class="profile-email" id="profileEmail">Loading...</p>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-item">
+              <div class="stat-value" id="favoritesCount">0</div>
+              <div class="stat-label">Favorites</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="watchlistCount">0</div>
+              <div class="stat-label">Watchlist</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="recentCount">0</div>
+              <div class="stat-label">Recently Viewed</div>
+            </div>
+          </div>
+          <div class="profile-links">
+            <a href="favorites.html" class="profile-link">View Favorites</a>
+            <a href="watchlist.html" class="profile-link">View Watchlist</a>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-primary" id="changePasswordBtn">Change Password</button>
+            <button class="btn btn-secondary" id="deleteAccountBtn">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

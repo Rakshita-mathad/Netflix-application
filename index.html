@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix</title>
+  <script src="js/auth.js"></script>
+  <script>
+    // Redirect: logged-in users to dashboard, others to login
+    if (typeof isLoggedIn === 'function' && isLoggedIn()) {
+      window.location.replace('home.html');
+    } else {
+      window.location.replace('login.html');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

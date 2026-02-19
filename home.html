@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Netflix</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="dashboard">
+    <header class="dashboard-header" id="dashboardHeader">
+      <a href="home.html" class="logo">NETFLIX</a>
+      <div class="search-logout">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="Search for movies..." aria-label="Search movies">
+          <button type="button" id="clearSearchBtn" class="clear-btn" aria-label="Clear search" style="display: none;">&times;</button>
+          <button type="button" id="searchBtn" aria-label="Search">🔍</button>
+        </div>
+        <a href="profile.html" class="btn-profile" id="profileBtn" title="Profile">👤</a>
+        <a href="favorites.html" class="btn-favorites-nav" id="favoritesBtn" title="Favorites">❤️</a>
+        <a href="login.html" class="btn-logout" id="logoutBtn">Logout</a>
+      </div>
+    </header>
+    <main class="dashboard-content">
+      <div class="welcome-msg" id="welcomeMsg"></div>
+      <div class="quick-nav" id="quickNav">
+        <button type="button" class="quick-nav-btn active" data-section="trending">Trending</button>
+        <button type="button" class="quick-nav-btn" data-section="favorites">My Favorites</button>
+        <button type="button" class="quick-nav-btn" data-section="recent">Recently Viewed</button>
+        <button type="button" class="quick-nav-btn" data-section="watchlist">Watchlist</button>
+      </div>
+      <div class="filter-bar" id="filterBar" style="display: none;">
+        <label for="filterType">Type:</label>
+        <select id="filterType" aria-label="Filter by type">
+          <option value="">All</option>
+          <option value="movie">Movies</option>
+          <option value="series">Series</option>
+        </select>
+        <label for="sortBy">Sort:</label>
+        <select id="sortBy" aria-label="Sort results">
+          <option value="title">Title A–Z</option>
+          <option value="year-desc">Newest first</option>
+          <option value="year-asc">Oldest first</option>
+        </select>
+      </div>
+      <div class="popular-searches" id="popularSearches">
+        <span class="popular-label">Try:</span>
+        <button type="button" class="chip" data-search="action">Action</button>
+        <button type="button" class="chip" data-search="comedy">Comedy</button>
+        <button type="button" class="chip" data-search="drama">Drama</button>
+        <button type="button" class="chip" data-search="sci-fi">Sci-Fi</button>
+        <button type="button" class="chip" data-search="marvel">Marvel</button>
+      </div>
+      <h2 class="section-title" id="sectionTitle">Movies</h2>
+      <main id="main-content" class="movies-main">
+      <div id="moviesContainer">
+        <div class="loading" id="loadingState">
+          <div class="loading-spinner" aria-hidden="true"></div>
+          <p>Loading movies...</p>
+        </div>
+        <div class="skeleton-grid" id="skeletonGrid" style="display: none;" aria-hidden="true">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <p>Search for movies using the search bar above, or try a suggestion.</p>
+          <button type="button" class="btn-retry" id="emptyStateSearchBtn">Search movies</button>
+        </div>
+        <div class="api-error" id="apiError" style="display: none;">
+          <p class="api-error-text"></p>
+          <button type="button" class="btn-retry" id="retryBtn">Try again</button>
+        </div>
+        <div id="movieRows" style="display: none;"></div>
+        <div class="load-more-wrap" id="loadMoreWrap" style="display: none;">
+          <button type="button" class="btn-load-more" id="loadMoreBtn">Load more</button>
+        </div>
+      </div>
+      </main>
+      <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top" style="display: none;">↑</button>
+    </main>
+  </div>
+  <!-- Movie Details Modal (will be created dynamically) -->
+  <script src="js/auth.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/movie-details.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
