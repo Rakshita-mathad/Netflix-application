@@ -73,47 +73,85 @@
   }
 
   function loadFavorites() {
-    if (typeof Favorites === 'undefined') return;
-
     const loadingState = document.getElementById('loadingState');
     const emptyState = document.getElementById('emptyState');
     const favoritesGrid = document.getElementById('favoritesGrid');
 
-    if (loadingState) loadingState.style.display = 'block';
-    if (emptyState) emptyState.style.display = 'none';
-    if (favoritesGrid) favoritesGrid.style.display = 'none';
+    // Verify DOM elements exist
+    if (!loadingState || !emptyState || !favoritesGrid) {
+      console.error('Required DOM elements not found. Check HTML structure.');
+      return;
+    }
 
-    setTimeout(() => {
-      const favorites = Favorites.getFavorites();
-      
-      if (loadingState) loadingState.style.display = 'none';
+    // Check if required dependencies are available
+    if (typeof Favorites === 'undefined') {
+      console.error('Favorites object is not defined. Make sure utils.js is loaded.');
+      loadingState.style.display = 'none';
+      emptyState.innerHTML = '<p>Error loading favorites. Please refresh the page.</p>';
+      emptyState.style.display = 'block';
+      return;
+    }
 
-      if (favorites.length === 0) {
-        if (emptyState) emptyState.style.display = 'block';
-      } else {
-        if (favoritesGrid) {
+    if (typeof escapeHtml === 'undefined') {
+      console.error('escapeHtml function is not defined. Make sure utils.js is loaded.');
+      loadingState.style.display = 'none';
+      emptyState.innerHTML = '<p>Error loading favorites. Please refresh the page.</p>';
+      emptyState.style.display = 'block';
+      return;
+    }
+
+    loadingState.style.display = 'block';
+    emptyState.style.display = 'none';
+    favoritesGrid.style.display = 'none';
+
+    try {
+      setTimeout(() => {
+        const favorites = Favorites.getFavorites();
+        
+        loadingState.style.display = 'none';
+
+        if (!favorites || favorites.length === 0) {
+          emptyState.innerHTML = '<p>You haven\'t added any favorites yet.</p><p style="margin-top: 1rem;"><a href="home.html" style="color: var(--red-accent);">Browse movies</a> to add favorites!</p>';
+          emptyState.style.display = 'block';
+        } else {
           const html = '<div class="movie-cards">' + favorites.map(renderMovieCard).join('') + '</div>';
           favoritesGrid.innerHTML = html;
           favoritesGrid.style.display = 'block';
           attachHandlers();
         }
-      }
-    }, 300);
+      }, 300);
+    } catch (error) {
+      console.error('Error loading favorites:', error);
+      loadingState.style.display = 'none';
+      emptyState.innerHTML = '<p>Error loading favorites. Please refresh the page.</p><p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">' + error.message + '</p>';
+      emptyState.style.display = 'block';
+    }
   }
 
   function init() {
-    if (!ensureLoggedIn()) return;
+    // Wait a bit to ensure all scripts are loaded
+    setTimeout(function() {
+      if (!ensureLoggedIn()) return;
 
-    const logoutBtn = document.getElementById('logoutBtn');
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (typeof logout === 'function') logout();
-        window.location.href = 'login.html';
-      });
-    }
+      // Verify dependencies are available
+      if (typeof isLoggedIn === 'undefined') {
+        console.error('auth.js not loaded properly');
+        return;
+      }
 
-    loadFavorites();
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (typeof logout === 'function') {
+            logout();
+          }
+          window.location.href = 'login.html';
+        });
+      }
+
+      loadFavorites();
+    }, 100);
   }
 
   if (document.readyState === 'loading') {
